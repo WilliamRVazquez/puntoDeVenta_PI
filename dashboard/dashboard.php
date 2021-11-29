@@ -5,7 +5,6 @@
 
         <!-- CONTENIDO DEL DASHBOARD -->
         <div class="container-fluid">
-            <?php include ('../carrito/carrito.php')?>
                     <!-- Lista de Contenido -->
                         <a href="buscarProducto.php"><button class="buscarP" id="abrir">Agregar Producto</button></a>
                             <h1>LISTA DE PRODUCTOS</h1>
