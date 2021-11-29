@@ -5,12 +5,13 @@
     $conexion = conectar();
 
     $id = $_REQUEST['id'];
+    $codigo = $_POST['codigo'];
     $nombre = $_POST['nombre'];
-    $imagen= addslashes(file_get_contents($_FILES['imagen']['tmp_name']));
+    $descripcion = $_POST['descripcion'];
     $precio = $_POST['precio'];
     $stock = $_POST['stock'];
 
-    $consulta = "UPDATE `productos` SET `nombre`='$nombre', `imagen`='$imagen', `precio`='$precio',`stock`='$stock' WHERE `id`='$id'";
+    $consulta = "UPDATE `productos` SET `codigo`='$codigo', `nombre`='$nombre', `descripcion`='$descripcion', `precio`='$precio',`prodExis`='$stock' WHERE `id`='$id'";
     $resultado = $conexion -> query($consulta);
 
 
