@@ -10,7 +10,6 @@
 <body>
     <?php include_once('../vistas/dash_superior.php')?>
     <?php include('../modal/usuariosdata.php')?>
-    <?php include('../modal/roles.php')?>
         <div class="container-fluid">
             <h1>LISTA DE USUARIOS</h1>
             <table class="table">
