@@ -36,6 +36,11 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link collapsed" href="listaUsuarios.php">
+                    <span>USUARIOS</span>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#">
                     <span>VENTAS REALIZADAS</span>
                 </a>
