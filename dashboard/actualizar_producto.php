@@ -37,6 +37,15 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="mb-3"><br>
+                                    <label class="form-label">Codigo</label>
+                                    <input type="text" class="form-control" name="codigo" value="<?php echo $row['codigo']?>">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mb-3"><br>
                                     <label class="form-label">Nombre</label>
                                     <input type="text" class="form-control" name="nombre" value="<?php echo $row['nombre']?>">
                                 </div>
@@ -46,9 +55,8 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="mb-3"><br>
-                                    <label class="form-label">Imagen del Producto</label>
-                                    <img height="75px" src="data: image/jpg; base64, <?php echo base64_encode($row['imagen']);?>" alt="producto">
-                                    <input type="file" class="form-control" name="imagen" value="" REQUIRED><br><br>
+                                    <label class="form-label">Descipcion</label>
+                                    <input type="text" class="form-control" name="descripcion" value="<?php echo $row['descripcion']?>">
                                 </div>
                             </div>
                         </div>
@@ -65,8 +73,8 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="mb-3">
-                                    <label class="form-label">Stock</label>
-                                    <input type="number" class="form-control" name="stock" placeholder="0" value="<?php echo $row['stock']?>">
+                                    <label class="form-label">Cantidad de Productos.</label>
+                                    <input type="number" class="form-control" name="stock" placeholder="0" value="<?php echo $row['prodExis']?>">
                                 </div>
                             </div>
                         </div>
