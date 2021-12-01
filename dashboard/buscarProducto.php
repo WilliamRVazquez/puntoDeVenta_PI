@@ -66,13 +66,19 @@
 
                             <?php
                                 if (isset($_REQUEST["btnAgregar"])) {
+                                    $producto = $_REQUEST['txtNombre']; 
                                     $codigo = $_REQUEST['txtCodigo'];
-                                    $producto = $_REQUEST['txtNombre'];
                                     $descripcion = $_REQUEST['txtDescripcion'];
                                     $cantidad = $_REQUEST['cant'];
                                     $precio = $_REQUEST['txtPrecio'];
 
-                                    echo "Codigo: $codigo <br> Nombre: $producto $descripcion <br> Cantidad: $cantidad <br> Precio: $$precio";
+                                    $_SESSION["carrito"][$producto]["code"] = $codigo;
+                                    $_SESSION["carrito"][$producto]["name"] = $producto;
+                                    $_SESSION["carrito"][$producto]["desc"] = $descripcion;
+                                    $_SESSION["carrito"][$producto]["canti"] = $cantidad;
+                                    $_SESSION["carrito"][$producto]["precio"] = $precio;
+
+                                    echo "<script>alert('Producto $codigo $producto $descripcion Agregado con exito.');</script>";
                                 }
                             ?>
 
