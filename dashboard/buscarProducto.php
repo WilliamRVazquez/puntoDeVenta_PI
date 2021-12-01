@@ -11,7 +11,6 @@
     <?php include_once('../vistas/dash_superior.php')?>
     <?php include('../modal/Data.php')?>
         <div class="container-fluid">
-            <button class="buscarP" id="abrir">Agregar Producto</button>
                             <h1>Agregar Producto</h1>
                             <form action="" method="get" class="form_search">
                                 <input type="text" name="busqueda" id="buscqueda" placeholder="Buscar...">
@@ -26,6 +25,7 @@
                                         <th>DESCRIPCION</th>
                                         <th>PRECIO</th>
                                         <th>ACCION</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                             <tbody>
@@ -45,7 +45,7 @@
                                     <th><?php echo $row['nombre']?></th>
                                     <th><?php echo $row['descripcion']?></th>
                                     <th><?php echo "$". $row['precio']?></th>
-                                    <th><form action="../carrito/carrito.php" method="POST">
+                                    <th><form action="buscarProducto.php" method="POST">
                                             <input type="hidden" name="txtId" value="<?php echo $row['id']?>">
                                             <input type="hidden" name="txtCodigo" value="<?php echo $row['codigo']?>">
                                             <input type="hidden" name="txtNombre" value="<?php echo $row['nombre']?>">
@@ -54,8 +54,7 @@
                                             <input type="hidden" name="txtStock" value="<?php echo $row['prodExis']?>">
                                             <input type="number" name="cant" value="1" width="50px">
                                             <input type="submit" value="Agregar" name="btnAgregar">
-                        </form></th>
-                                    <th></th>
+                                        </form></th>
                                 </tr>
                             <?php
                                 }
@@ -64,6 +63,18 @@
                             </tbody>
                             </table>
                             <a href="dashboard.php"><button id="cerrar" class="buscarP">Cerrar</button></a>
+
+                            <?php
+                                if (isset($_REQUEST["btnAgregar"])) {
+                                    $codigo = $_REQUEST['txtCodigo'];
+                                    $producto = $_REQUEST['txtNombre'];
+                                    $descripcion = $_REQUEST['txtDescripcion'];
+                                    $cantidad = $_REQUEST['cant'];
+                                    $precio = $_REQUEST['txtPrecio'];
+
+                                    echo "Codigo: $codigo <br> Nombre: $producto $descripcion <br> Cantidad: $cantidad <br> Precio: $$precio";
+                                }
+                            ?>
 
             <?php include_once ('../vistas/dash_footer.php')?>
         </div>
