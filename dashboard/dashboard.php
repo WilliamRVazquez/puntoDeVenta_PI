@@ -9,7 +9,7 @@
         <div class="container-fluid">
                     <!-- Lista de Contenido -->
                         <a href="buscarProducto.php"><button class="buscarP" id="abrir">Agregar Producto</button></a>
-                        <a href=""></a>
+                        <a href="dashboard.php?vaciar=true"><button class="buscarP" id="abrir">Vaciar</button></a>
                             <h1>LISTA DE PRODUCTOS</h1>
                             <br>
                             <?php
@@ -36,6 +36,7 @@
                                             foreach ($arreglo as $key => $value) {
                                                 echo "<th>" .$value. "</th>";
                                             }
+                                            echo "<th><a href='dashboard.php?item=$indice' class='btn btn-danger'><i class='fas fa-trash'></a></th>";
                                             echo "</tr>";
                                         }
                                         ?>
@@ -44,6 +45,17 @@
                             <?php
                                     }
                                     echo "<h1>Total: $ $total</h1>";
+
+                                    if (isset($_REQUEST["vaciar"])) {
+                                        unset($_SESSION["carrito"]);
+                                    }
+
+                                    if (isset($_REQUEST["item"])) {
+                                        $producto = $_REQUEST["item"];
+
+                                        unset($_SESSION["carrito"][$producto]);
+                                        header("location:dashboard.php");
+                                    }
                             ?>
                 </div>
 
