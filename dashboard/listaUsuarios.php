@@ -29,7 +29,14 @@
                         <tr>
                         <th><?php echo $row['usuario']?></th>
                         <th><?php echo $row['nombre']?></th>
-                        <th><?php echo $row['id_cargo']?></th>
+                        <th><?php 
+                            if($row['id_cargo'] == 1){
+                                echo 'Administrador';
+                            }
+                            else {
+                                echo 'Cliente';
+                            }
+                            ?></th>
                         </tr>
                     
                     <?php 

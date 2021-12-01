@@ -1,4 +1,5 @@
-<?php include ("Conexion.php");
+<?php 
+include ("Conexion.php");
 
 $conexion = conectar();
 
